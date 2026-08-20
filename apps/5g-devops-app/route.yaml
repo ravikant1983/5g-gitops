@@ -1,0 +1,11 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: 5g-devops-app
+  namespace: 5g-devops
+spec:
+  to:
+    kind: Service
+    name: 5g-devops-app
+  port:
+    targetPort: 80

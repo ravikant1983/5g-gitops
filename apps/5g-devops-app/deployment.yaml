@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 5g-devops-app
+  namespace: 5g-devops
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: 5g-devops-app
+  template:
+    metadata:
+      labels:
+        app: 5g-devops-app
+    spec:
+      containers:
+        - name: app
+          image: docker.io/rkg1983/5g-devops-app:latest
+          ports:
+            - containerPort: 80

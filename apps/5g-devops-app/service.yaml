@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: 5g-devops-app
+  namespace: 5g-devops
+spec:
+  selector:
+    app: 5g-devops-app
+  ports:
+    - port: 80
+      targetPort: 80
