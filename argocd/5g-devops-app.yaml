@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: 5g-devops-app
+  namespace: openshift-gitops
+
+spec:
+
+  project: default
+
+  source:
+    repoURL: https://github.com/ravikant1983/5g-gitops.git
+    targetRevision: main
+    path: apps/5g-devops-app
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: 5g-devops
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+    syncOptions:
+      - CreateNamespace=true
