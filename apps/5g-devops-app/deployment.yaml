@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: app
-          image: docker.io/rkg1983/5g-devops-app:11
+          image: docker.io/rkg1983/5g-devops-app:12
           ports:
             - containerPort: 80
